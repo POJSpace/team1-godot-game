@@ -336,8 +336,8 @@ points = PoolVector2Array( 15, 16, 8, 16, 8, 1, 15, 1 )
 } ]
 12/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 11, 9.5 )
+[sub_resource type="CapsuleShape2D" id=23]
+height = 0.0
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 103.2, 2 )
@@ -379,7 +379,7 @@ vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 3, 6.5 )
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="CameraMovement" type="Node2D" parent="."]
 script = ExtResource( 10 )
