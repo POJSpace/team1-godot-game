@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SewerTiles.png-4b0b34321094f28cf3aef4eaf9c5356d.stex"
+path="res://.import/Uni Ride.png-25a49e22982af4ca47fa49a17a5bbfec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SewerTiles.png"
-dest_files=[ "res://.import/SewerTiles.png-4b0b34321094f28cf3aef4eaf9c5356d.stex" ]
+source_file="res://assets/Astr1konaut/Uni Ride.png"
+dest_files=[ "res://.import/Uni Ride.png-25a49e22982af4ca47fa49a17a5bbfec.stex" ]
 
 [params]
 
