@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 export var speed = 150
 export var jump_power_min = 200
-export var jump_power_max = 900
-export var gravity = 1200
+export var jump_power_max = 650
+export var gravity = 1100
 export var acc = 300
-export var deacc = 800 #akcelerace zastavení
+export var deacc = 1300 #akcelerace zastavení
 export var jump_charge = 500
 
 var motion = Vector2.ZERO
