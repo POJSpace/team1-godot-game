@@ -23,18 +23,17 @@ func _physics_process(delta):
 			motion.x = 0
 			landing = false
 		if Input.is_action_pressed("right"):
-			$Texture.flip_h = false
-			animation.play("Riding")
+			$Texture.flip_h = false #horizontal flip of the texture
+			animation.play("Riding") 
 			motion.x += acc * delta
 			if motion.x > speed:
 				motion.x = speed
 		elif Input.is_action_pressed("left"):
-			$Texture.flip_h = true
-			animation.play("Riding")
+			$Texture.flip_h = true #horizontal flip of the texture
+			animation.play("Riding") 
 			motion.x -= acc * delta 
 			if motion.x < -speed:
 				motion.x = -speed
-		
 		if motion.x > 5:
 			motion.x -= deacc * delta
 		elif motion.x < -5:
