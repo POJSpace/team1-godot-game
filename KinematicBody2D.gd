@@ -5,8 +5,8 @@ export var jump_speed = 250
 export var jump_power_min = 200
 export var jump_power_max = 725
 export var gravity = 1300
-export var acc = 300
-export var deacc = 1300 #akcelerace zastavení
+export var acc = 600
+export var deacc = 400 #akcelerace zastavení
 export var jump_charge = 500
 
 onready var animation = $AnimationPlayer
@@ -24,17 +24,22 @@ func _physics_process(delta):
 			landing = false
 		if Input.is_action_pressed("right"):
 			$Texture.flip_h = false
-			animation.play("RESET")
+			animation.play("Riding")
 			motion.x += acc * delta
 			if motion.x > speed:
 				motion.x = speed
 		elif Input.is_action_pressed("left"):
 			$Texture.flip_h = true
-			animation.play("RESET")
+			animation.play("Riding")
 			motion.x -= acc * delta 
 			if motion.x < -speed:
-				motion.x = -speed	
-		else: 
+				motion.x = -speed
+		
+		if motion.x > 5:
+			motion.x -= deacc * delta
+		elif motion.x < -5:
+			motion.x += deacc * delta
+		else:
 			animation.play("Idle")
 			motion.x = 0
 			
