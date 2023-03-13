@@ -44,8 +44,9 @@ func _physics_process(delta):
 			
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		is_jumping = true
-
+		#animation.play("ChargeJump")
 	if is_jumping and Input.is_action_pressed("jump"):
+		#animation.play("ChargeJump")
 		if  jump_power < jump_power_max:
 			jump_power += delta * jump_charge
 		motion.x = 0
