@@ -7,32 +7,43 @@ export var jump_power_max = 725
 export var gravity = 1300
 export var acc = 600
 export var deacc = 400 #akcelerace zastavení
-export var jump_charge = 500
+export var jump_charge = 250
 var collison_info
 var v
 
 onready var animation = $AnimationPlayer
+onready var animation_tree = $AnimationTree
 
 var landing = false
 var motion = Vector2.ZERO
 var is_jumping = false
 var jump_power = jump_power_min
 
+func _ready():
+	animation_tree.active = true
+	animation_tree = animation_tree.get("parameters/playback")
+	
 func _physics_process(delta):
 	motion.y += gravity * delta
 	if is_on_floor():
 		if landing == true:
 			motion.x = 0
 			landing = false
-		if Input.is_action_pressed("right"):
+		if Input.is_action_pressed("jump"):
+			animation_tree.travel("ChargeJump")
+			if Input.is_action_pressed("right"):
+				$Texture.flip_h = false
+			if Input.is_action_pressed("left"):
+				$Texture.flip_h = true
+		elif Input.is_action_pressed("right"):
 			$Texture.flip_h = false #horizontal flip of the texture
-			animation.play("Riding") 
+			animation_tree.travel("Riding") 
 			motion.x += acc * delta
 			if motion.x > speed:
 				motion.x = speed
 		elif Input.is_action_pressed("left"):
 			$Texture.flip_h = true #horizontal flip of the texture
-			animation.play("Riding") 
+			animation_tree.travel("Riding") 
 			motion.x -= acc * delta 
 			if motion.x < -speed:
 				motion.x = -speed
@@ -41,19 +52,20 @@ func _physics_process(delta):
 		elif motion.x < -5:
 			motion.x += deacc * delta
 		else:
-			animation.play("Idle")
+			if ! Input.is_action_pressed("jump"):
+				animation_tree.travel("Idle") 
 			motion.x = 0
 			
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		is_jumping = true
-		#animation.play("ChargeJump")
+		
 	if is_jumping and Input.is_action_pressed("jump"):
-		#animation.play("ChargeJump")
-		if  jump_power < jump_power_max:
+		if  jump_power <= jump_power_max:
 			jump_power += delta * jump_charge
 		motion.x = 0
 		
 	if is_jumping and Input.is_action_just_released("jump"):
+		animation_tree.travel("Jump") 
 		landing = true
 		if Input.is_action_pressed("right"):
 			motion.x += jump_power

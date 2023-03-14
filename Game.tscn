@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://assets/CastleTiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/Astr1konaut/baf11111.png" type="Texture" id=2]
@@ -12,12 +12,12 @@
 [ext_resource path="res://CameraMovement.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 10.5, 21 )
+extents = Vector2( 9.59375, 22.5 )
 
 [sub_resource type="Animation" id=112]
 resource_name = "ChargeJump"
-length = 3.0
-loop = true
+length = 2.3
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
@@ -29,6 +29,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10.5, 22.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 25.5 ) ]
 }
 
 [sub_resource type="Animation" id=116]
@@ -45,9 +69,35 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 35 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10.5, 22.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 25.5 ) ]
+}
 
 [sub_resource type="Animation" id=111]
 resource_name = "Idle"
+length = 0.108
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
@@ -60,11 +110,34 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 10 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.59375, 22.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.20313, 25.5 ) ]
+}
 
 [sub_resource type="Animation" id=117]
 resource_name = "Jump"
-length = 0.6
-loop = true
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
@@ -72,10 +145,34 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 32, 33, 34 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10.5, 23 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 25 ) ]
 }
 
 [sub_resource type="Animation" id=113]
@@ -91,6 +188,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 24 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.59375, 22.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.20313, 25.5 ) ]
 }
 
 [sub_resource type="Animation" id=114]
@@ -108,6 +241,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 9, 10, 11, 12, 13, 15, 14 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.75, 22.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1.25, 25.5 ) ]
 }
 
 [sub_resource type="Animation" id=115]
@@ -127,6 +284,84 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:extents")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10.0117, 21 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2, 27 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=118]
+animation = "ChargeJump"
+
+[sub_resource type="AnimationNodeAnimation" id=119]
+animation = "Fly"
+
+[sub_resource type="AnimationNodeAnimation" id=120]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=121]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=122]
+animation = "Riding"
+
+[sub_resource type="AnimationNodeAnimation" id=123]
+animation = "Stun"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=124]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=127]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=128]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=129]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=132]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=133]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=135]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=136]
+
+[sub_resource type="AnimationNodeStateMachine" id=130]
+states/ChargeJump/node = SubResource( 118 )
+states/ChargeJump/position = Vector2( 409, 223 )
+states/Fly/node = SubResource( 119 )
+states/Fly/position = Vector2( 670, 42 )
+states/Idle/node = SubResource( 120 )
+states/Idle/position = Vector2( 158, 92 )
+states/Jump/node = SubResource( 121 )
+states/Jump/position = Vector2( 670, 223 )
+states/Riding/node = SubResource( 122 )
+states/Riding/position = Vector2( 158, 348 )
+states/Stun/node = SubResource( 123 )
+states/Stun/position = Vector2( 1150, 92 )
+transitions = [ "Idle", "ChargeJump", SubResource( 124 ), "Idle", "Riding", SubResource( 127 ), "Riding", "Idle", SubResource( 128 ), "Fly", "Stun", SubResource( 129 ), "Fly", "Idle", SubResource( 132 ), "Stun", "Idle", SubResource( 133 ), "Jump", "Fly", SubResource( 135 ), "ChargeJump", "Jump", SubResource( 136 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=131]
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 103.2, 2 )
@@ -1383,6 +1618,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Node2D" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="."]
+visible = false
 
 [node name="Background1" type="TextureRect" parent="YSort"]
 margin_left = 127.0
@@ -1426,7 +1662,7 @@ z_index = -4
 texture = ExtResource( 9 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 529, 368 )
+position = Vector2( 539, 365 )
 script = ExtResource( 8 )
 
 [node name="Texture" type="Sprite" parent="Player"]
@@ -1437,7 +1673,7 @@ hframes = 6
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -2, 26 )
+position = Vector2( -1.20313, 25.5 )
 shape = SubResource( 24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
@@ -1448,6 +1684,11 @@ anims/Jump = SubResource( 117 )
 anims/RESET = SubResource( 113 )
 anims/Riding = SubResource( 114 )
 anims/Stun = SubResource( 115 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Player"]
+tree_root = SubResource( 130 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 131 )
 
 [node name="CameraMovement" type="Node2D" parent="."]
 script = ExtResource( 10 )
@@ -1472,7 +1713,8 @@ scale = Vector2( 5, 1 )
 shape = SubResource( 22 )
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -8 )
 tile_set = SubResource( 38 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -2490364, 11, 0, -2490348, 18, 0, -2490341, 15, 0, -2424828, 11, 0, -2424805, 15, 0, -2359292, 11, 0, -2359269, 15, 0, -2293756, 11, 0, -2293733, 15, 0, -2228220, 11, 0, -2228197, 15, 0, -2162684, 11, 0, -2162661, 15, 0, -2097148, 11, 0, -2097139, 83, 0, -2097138, 84, 0, -2097125, 15, 0, -2031612, 11, 0, -2031596, 88, 0, -2031589, 15, 0, -1966076, 11, 0, -1966053, 15, 0, -1900540, 11, 0, -1900517, 15, 0, -1835004, 11, 0, -1834999, 88, 0, -1834982, 93, 0, -1834981, 15, 0, -1769468, 11, 0, -1769445, 15, 0, -1703932, 11, 0, -1703909, 15, 0, -1638396, 11, 0, -1638380, 89, 0, -1638373, 15, 0, -1572860, 11, 0, -1572859, 88, 0, -1572837, 15, 0, -1507324, 11, 0, -1507301, 15, 0, -1441788, 11, 0, -1441765, 15, 0, -1376252, 11, 0, -1376232, 82, 0, -1376229, 15, 0, -1310716, 11, 0, -1310710, 90, 0, -1310696, 81, 0, -1310693, 15, 0, -1245180, 4, 0, -1245172, 83, 0, -1245171, 96, 0, -1245170, 96, 0, -1245169, 96, 0, -1245168, 96, 0, -1245167, 96, 0, -1245166, 96, 0, -1245165, 96, 0, -1245164, 84, 0, -1245160, 81, 0, -1245157, 3, 0, -1179644, 4, 0, -1179625, 90, 0, -1179624, 81, 0, -1179621, 3, 0, -1114108, 4, 0, -1114107, 92, 0, -1114085, 3, 0, -1048572, 4, 0, -1048565, 89, 0, -1048564, 89, 0, -1048563, 89, 0, -1048559, 89, 0, -1048549, 3, 0, -983036, 4, 0, -983020, 89, 0, -983013, 3, 0, -917500, 4, 0, -917477, 3, 0, -851964, 4, 0, -851963, 92, 0, -851941, 3, 0, -786428, 11, 0, -786405, 3, 0, -720892, 11, 0, -720869, 3, 0, -655356, 11, 0, -655333, 3, 0, -589820, 11, 0, -589797, 3, 0, -524284, 11, 0, -524261, 3, 0, -458748, 11, 0, -458743, 89, 0, -458742, 82, 0, -458725, 3, 0, -393212, 11, 0, -393206, 81, 0, -393189, 3, 0, -327676, 11, 0, -327670, 81, 0, -327663, 89, 0, -327653, 3, 0, -262140, 11, 0, -262134, 81, 0, -262117, 3, 0, -196604, 11, 0, -196598, 81, 0, -196581, 3, 0, -131068, 4, 0, -131062, 81, 0, -131050, 88, 0, -131045, 3, 0, -65532, 4, 0, -65526, 81, 0, -65514, 82, 0, -65509, 3, 0, 4, 4, 0, 10, 81, 0, 22, 81, 0, 27, 3, 0, 65540, 4, 0, 65546, 81, 0, 65558, 81, 0, 65559, 88, 0, 65563, 3, 0, 131076, 4, 0, 131082, 81, 0, 131088, 95, 0, 131094, 85, 0, 131099, 3, 0, 196612, 4, 0, 196618, 81, 0, 196635, 3, 0, 262148, 11, 0, 262154, 81, 0, 262171, 3, 0, 327684, 11, 0, 327690, 81, 0, 327707, 3, 0, 393220, 11, 0, 393226, 81, 0, 393237, 89, 0, 393238, 82, 0, 393242, 93, 0, 393243, 3, 0, 458756, 11, 0, 458762, 81, 0, 458774, 81, 0, 458779, 3, 0, 524292, 11, 0, 524298, 81, 0, 524302, 88, 0, 524310, 81, 0, 524315, 3, 0, 589828, 11, 0, 589834, 85, 0, 589846, 85, 0, 589851, 3, 0, 655364, 11, 0, 655387, 15, 0, 720900, 11, 0, 720923, 15, 0, 786436, 11, 0, 786459, 15, 0, 851972, 11, 0, 851978, 0, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 17, 0, 851988, 17, 0, 851989, 1, 0, 851990, 2, 0, 851995, 15, 0, 917508, 11, 0, 917514, 3, 0, 917515, -1073741803, 0, 917516, -1073741803, 0, 917517, -1073741803, 0, 917518, 21, 0, 917519, 21, 0, 917520, 21, 0, 917521, 21, 0, 917522, -1073741803, 0, 917523, -1073741803, 0, 917524, -1073741803, 0, 917525, -1073741803, 0, 917526, 11, 0, 917531, 15, 0, 983044, 11, 0, 983050, 3, 0, 983051, -1073741803, 0, 983052, -1073741803, 0, 983053, -1073741803, 0, 983054, 21, 0, 983055, -1073741803, 0, 983056, 21, 0, 983057, 21, 0, 983058, 21, 0, 983059, -1073741803, 0, 983060, -1073741803, 0, 983061, -1073741803, 0, 983062, 11, 0, 983067, 15, 0, 1048580, 11, 0, 1048586, 3, 0, 1048587, -1073741803, 0, 1048588, -1073741803, 0, 1048589, -1073741803, 0, 1048590, -1073741803, 0, 1048591, 21, 0, 1048592, 21, 0, 1048593, 21, 0, 1048594, -1073741803, 0, 1048595, -1073741803, 0, 1048596, -1073741803, 0, 1048597, -1073741803, 0, 1048598, 11, 0, 1048603, 15, 0, 1114116, 11, 0, 1114122, 3, 0, 1114123, -1073741803, 0, 1114124, -1073741803, 0, 1114125, -1073741803, 0, 1114126, -1073741803, 0, 1114127, -1073741803, 0, 1114128, 21, 0, 1114129, 21, 0, 1114130, -1073741803, 0, 1114131, -1073741803, 0, 1114132, -1073741803, 0, 1114133, -1073741803, 0, 1114134, 11, 0, 1114139, 3, 0, 1179652, 4, 0, 1179658, 7, 0, 1179659, 6, 0, 1179660, 6, 0, 1179661, 6, 0, 1179662, 6, 0, 1179663, 6, 0, 1179664, 6, 0, 1179665, 6, 0, 1179666, 6, 0, 1179667, 6, 0, 1179668, 6, 0, 1179669, 6, 0, 1179670, 5, 0, 1179675, 3, 0, 4063246, 0, 0, 4063250, 0, 0, 4128782, 0, 0, 4128786, 0, 0, 4194318, 0, 0, 4194322, 0, 0, 4259854, 0, 0, 4259858, 0, 0, 4325390, 0, 0, 4325394, 0, 0, 4390926, 0, 0, 4390930, 0, 0, 4456462, 0, 0, 4456466, 0, 0, 4521999, 0, 0, 4522000, 0, 0, 4522001, 0, 0 )
+tile_data = PoolIntArray( -2490364, 11, 0, -2490348, 18, 0, -2490341, 15, 0, -2424828, 11, 0, -2424805, 15, 0, -2359292, 11, 0, -2359269, 15, 0, -2293756, 11, 0, -2293733, 15, 0, -2228220, 11, 0, -2228197, 15, 0, -2162684, 11, 0, -2162661, 15, 0, -2097148, 11, 0, -2097139, 83, 0, -2097138, 84, 0, -2097125, 15, 0, -2031612, 11, 0, -2031596, 88, 0, -2031589, 15, 0, -1966076, 11, 0, -1966053, 15, 0, -1900540, 11, 0, -1900517, 15, 0, -1835004, 11, 0, -1834999, 88, 0, -1834982, 93, 0, -1834981, 15, 0, -1769468, 11, 0, -1769445, 15, 0, -1703932, 11, 0, -1703909, 15, 0, -1638396, 11, 0, -1638380, 89, 0, -1638373, 15, 0, -1572860, 11, 0, -1572859, 88, 0, -1572837, 15, 0, -1507324, 11, 0, -1507301, 15, 0, -1441788, 11, 0, -1441765, 15, 0, -1376252, 11, 0, -1376232, 82, 0, -1376229, 15, 0, -1310716, 11, 0, -1310710, 90, 0, -1310696, 81, 0, -1310693, 15, 0, -1245180, 4, 0, -1245172, 83, 0, -1245171, 96, 0, -1245170, 96, 0, -1245169, 96, 0, -1245168, 96, 0, -1245167, 96, 0, -1245166, 96, 0, -1245165, 96, 0, -1245164, 84, 0, -1245160, 81, 0, -1245157, 3, 0, -1179644, 4, 0, -1179625, 90, 0, -1179624, 81, 0, -1179621, 3, 0, -1114108, 4, 0, -1114107, 92, 0, -1114085, 3, 0, -1048572, 4, 0, -1048565, 89, 0, -1048564, 89, 0, -1048563, 89, 0, -1048559, 89, 0, -1048549, 3, 0, -983036, 4, 0, -983020, 89, 0, -983013, 3, 0, -917500, 4, 0, -917477, 3, 0, -851964, 4, 0, -851963, 92, 0, -851941, 3, 0, -786428, 11, 0, -786405, 3, 0, -720892, 11, 0, -720869, 3, 0, -655356, 11, 0, -655333, 3, 0, -589820, 11, 0, -589797, 3, 0, -524284, 11, 0, -524261, 3, 0, -458748, 11, 0, -458743, 89, 0, -458742, 82, 0, -458725, 3, 0, -393212, 11, 0, -393206, 81, 0, -393189, 3, 0, -327676, 11, 0, -327670, 81, 0, -327663, 89, 0, -327653, 3, 0, -262140, 11, 0, -262134, 81, 0, -262117, 3, 0, -196604, 11, 0, -196598, 81, 0, -196581, 3, 0, -131068, 4, 0, -131062, 81, 0, -131050, 88, 0, -131045, 3, 0, -65532, 4, 0, -65526, 81, 0, -65514, 82, 0, -65509, 3, 0, 4, 4, 0, 10, 81, 0, 22, 81, 0, 27, 3, 0, 65540, 4, 0, 65546, 81, 0, 65558, 81, 0, 65559, 88, 0, 65563, 3, 0, 131076, 4, 0, 131082, 81, 0, 131088, 95, 0, 131094, 85, 0, 131099, 3, 0, 196612, 4, 0, 196618, 81, 0, 196635, 3, 0, 262148, 11, 0, 262154, 81, 0, 262171, 3, 0, 327684, 11, 0, 327690, 81, 0, 327707, 3, 0, 393220, 11, 0, 393226, 81, 0, 393237, 89, 0, 393238, 82, 0, 393242, 93, 0, 393243, 3, 0, 458756, 11, 0, 458762, 81, 0, 458774, 81, 0, 458779, 3, 0, 524292, 11, 0, 524298, 81, 0, 524302, 88, 0, 524310, 81, 0, 524315, 3, 0, 589828, 11, 0, 589834, 85, 0, 589846, 85, 0, 589851, 3, 0, 655364, 11, 0, 655387, 15, 0, 720900, 11, 0, 720923, 15, 0, 786436, 11, 0, 786459, 15, 0, 851972, 11, 0, 851978, 0, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 17, 0, 851988, 17, 0, 851989, 1, 0, 851990, 2, 0, 851995, 15, 0, 917508, 11, 0, 917514, 3, 0, 917515, -1073741803, 0, 917516, -1073741803, 0, 917517, -1073741803, 0, 917518, 21, 0, 917519, 21, 0, 917520, 21, 0, 917521, 21, 0, 917522, -1073741803, 0, 917523, -1073741803, 0, 917524, -1073741803, 0, 917525, -1073741803, 0, 917526, 11, 0, 917531, 15, 0, 983044, 11, 0, 983050, 3, 0, 983051, -1073741803, 0, 983052, -1073741803, 0, 983053, -1073741803, 0, 983054, 21, 0, 983055, -1073741803, 0, 983056, 21, 0, 983057, 21, 0, 983058, 21, 0, 983059, -1073741803, 0, 983060, -1073741803, 0, 983061, -1073741803, 0, 983062, 11, 0, 983067, 15, 0, 1048580, 11, 0, 1048586, 3, 0, 1048587, -1073741803, 0, 1048588, -1073741803, 0, 1048589, -1073741803, 0, 1048590, -1073741803, 0, 1048591, 21, 0, 1048592, 21, 0, 1048593, 21, 0, 1048594, -1073741803, 0, 1048595, -1073741803, 0, 1048596, -1073741803, 0, 1048597, -1073741803, 0, 1048598, 11, 0, 1048603, 15, 0, 1114116, 11, 0, 1114122, 3, 0, 1114123, -1073741803, 0, 1114124, -1073741803, 0, 1114125, -1073741803, 0, 1114126, -1073741803, 0, 1114127, -1073741803, 0, 1114128, 21, 0, 1114129, 21, 0, 1114130, -1073741803, 0, 1114131, -1073741803, 0, 1114132, -1073741803, 0, 1114133, -1073741803, 0, 1114134, 11, 0, 1114139, 3, 0, 1179652, 4, 0, 1179653, 8, 0, 1179654, 8, 0, 1179655, 8, 0, 1179656, 8, 0, 1179657, 8, 0, 1179658, 7, 0, 1179659, 6, 0, 1179660, 6, 0, 1179661, 6, 0, 1179662, 6, 0, 1179663, 6, 0, 1179664, 6, 0, 1179665, 6, 0, 1179666, 6, 0, 1179667, 6, 0, 1179668, 6, 0, 1179669, 6, 0, 1179670, 5, 0, 1179671, 8, 0, 1179672, 8, 0, 1179673, 8, 0, 1179674, 8, 0, 1179675, 3, 0, 4063247, 8, 0, 4128783, 8, 0, 4194319, 8, 0, 4259855, 8, 0, 4325391, 8, 0, 4390927, 8, 0, 4390928, 8, 0, 4390929, 8, 0, 4390930, 8, 0 )
