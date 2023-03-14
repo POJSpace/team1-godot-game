@@ -8,6 +8,8 @@ export var gravity = 1300
 export var acc = 600
 export var deacc = 400 #akcelerace zastavení
 export var jump_charge = 500
+var collison_info
+var v
 
 onready var animation = $AnimationPlayer
 
@@ -65,6 +67,16 @@ func _physics_process(delta):
 		is_jumping = false
 		jump_power = jump_power_min
 		
-
+	collide_on_wall()
+	
 	motion = move_and_slide(motion, Vector2.UP)
+	
+func collide_on_wall():
+	if motion.x !=0:
+		v = motion.x
+	for i in range(get_slide_count()):
+		var collision = get_slide_collision(i)
+		if collision.collider is TileMap and not is_on_floor():
+			motion.x = collision.normal.x*abs(v)*0.35
+	
 
